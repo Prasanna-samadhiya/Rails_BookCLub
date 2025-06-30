@@ -5,6 +5,11 @@
     <div id="form">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
+        
+        <div>
+          <%= f.label :name, class: "form-label fw-semibold", style: "color: #111827;" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "you name", class: "form-control", style: "border-radius: 8px;" %>
+        </div>
 
         <div>
           <%= f.label :email, class: "form-label fw-semibold", style: "color: #111827;" %>
@@ -17,12 +22,12 @@
            (<%= @minimum_password_length %> characters minimum)
            
           <% end %>
-          <%= f.password_field :password, autocomplete: "new-password", placeholder: "••••••••", class: "form-control", style: "border-radius: 8px;" %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", style: "border-radius: 8px;" %>
         </div>
 
         <div>
           <%= f.label :password_confirmation, class: "form-label fw-semibold", style: "color: #111827;" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "••••••••", class: "form-control", style: "border-radius: 8px;" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirm password", class: "form-control", style: "border-radius: 8px;" %>
         </div>
 
         <div class="d-grid mt-3">
